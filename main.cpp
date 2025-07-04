@@ -89,10 +89,36 @@ void test3(){
 
     runTest("Test Case 3: If tied total time return shortest distance time", stadium, "Seat3", "Concession2");
 }
+
+void totalShortestTime(){
+    StadiumGraph stadium;
+
+    // Graph structure from a point to a point
+    // Test Case: Chooses shortest wait time regardless of distance (e.g. Longer walk but shorter wait time)
+    stadium.addEdge("Seat1", "node11", 1);
+    stadium.addEdge("node11", "node12", 2);
+    stadium.addEdge("node12", "Concession1", 2);
+    stadium.addEdge("node11", "Concession2", 7);
+    stadium.addEdge("Seat1", "Concession3", 5); 
+
+    // Concessions
+    stadium.addConcession("Concession1");
+    stadium.addConcession("Concession2");
+    stadium.addConcession("Concession3");
+
+    // Queue times
+    stadium.setQueueTime("Concession1", 5);
+    stadium.setQueueTime("Concession2", 1);
+    stadium.setQueueTime("Concession3", 2);
+
+    runTest("Test Case 4: Shortest Time combined", stadium, "Seat1", "Concession3");
+}
+
 int main() {
     test1();
     test2();
     test3();
+    totalShortestTime();
     return 0;
 }
 
