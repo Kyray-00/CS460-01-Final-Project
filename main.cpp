@@ -94,7 +94,7 @@ void totalShortestTime(){
     StadiumGraph stadium;
 
     // Graph structure from a point to a point
-    // Test Case: Chooses shortest wait time regardless of distance (e.g. Longer walk but shorter wait time)
+    // Test Case: Shortest combined walk and wait time
     stadium.addEdge("Seat1", "node11", 1);
     stadium.addEdge("node11", "node12", 2);
     stadium.addEdge("node12", "Concession1", 2);
